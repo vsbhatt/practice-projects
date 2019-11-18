@@ -1,0 +1,39 @@
+.logo {
+  height: 50px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+}
+
+.logo:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.search-btn {
+  background-color: #FFFF00;
+  color: #000;
+}
+
+.search-form {
+  width: 87%;
+}
+
+@media(min-width: 900px) {
+  .search-form {
+    width: 79%;
+  }
+}
+
+.w-50p {
+  width: 50%;
+}
+
+.nav-item {
+  background-color: #FFFF00;
+  cursor: pointer;
+}
+
+.nav-link {
+  color: #000 !important;
+}

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="../assets/images/logo.png" class="logo" (click)="goToHomePage()"/>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ml-3">
+        <a class="nav-link" title="Click to view favourite people" (click)="redirectToFavourites()">
+          <i class="fa fa-heart" aria-hidden="true"></i>&nbsp;&nbsp;Favourite people
+        </a>
+      </li>
+      <li class="nav-item ml-3">
+        <a class="nav-link" title="Click to view neaby comic stores" (click)="goToComicStoreListing()">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;Nearby comic stores
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 w-50p" name="searchForm">
+      <input class="form-control mr-sm-2 search-form" type="search" name="search" [(ngModel)]="searchText" placeholder="Search with films, people, planets, spaceships" aria-label="Search">
+      <button class="btn search-btn my-2 my-sm-0" type="submit" (click)="search()">Search</button>
+    </form>
+  </div>
+</nav>

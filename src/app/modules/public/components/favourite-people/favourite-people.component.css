@@ -1,0 +1,10 @@
+  .main-div {
+    height: 590px;
+  }
+
+  .not-available {
+    font-size: 40px;
+    /* vertical-align: middle; */
+    font-weight: bold;
+    margin-top: 20%;
+  }

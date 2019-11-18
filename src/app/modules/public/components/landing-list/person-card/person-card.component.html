@@ -1,0 +1,59 @@
+<div class="card-layout">
+  <div class="box-part text-center" (click)="navigateToDetails()">
+    <div class="name-div">
+      <span class="name-span">{{people.name}}&nbsp;&nbsp;
+        <span>
+          <i class="fa fa-male" title="Male" *ngIf="people.gender === 'male' || people.gender === 'Male'"
+            aria-hidden="true"></i>
+        </span>
+        <span>
+          <i class="fa fa-female" title="Female" *ngIf="people.gender === 'female' || people.gender === 'Female'"
+            aria-hidden="true"></i>
+        </span>
+        <span
+          *ngIf="people.gender != 'female' && people.gender != 'Female' && people.gender != 'male' && people.gender != 'Male'">
+          ({{people.gender}})
+        </span>
+      </span>
+      <i class="fa heart-icon fa-heart" *ngIf="isFavourite" (click)="$event.stopPropagation();setFavourite()"
+        title="Unmark as favourite" aria-hidden="true"></i>
+      <i class="fa heart-icon fa-heart-o" *ngIf="!isFavourite" (click)="$event.stopPropagation();setFavourite()"
+        title="Mark as favourite" aria-hidden="true"></i>
+    </div>
+
+    <div class="display-fl mt-5p">
+      <label class="label-text">Starships:</label>
+      <ng-container *ngIf="starships && starships.length; then starshipContent else loadingContent"></ng-container>
+      <ng-template #starshipContent>
+        <span *ngFor="let starship of starships" class="value-text"
+          (click)="$event.stopPropagation();filterStarship(starship)">&nbsp;{{starship.name}}</span>
+      </ng-template>
+      <ng-template #loadingContent>
+        &nbsp;<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+      </ng-template>
+    </div>
+
+    <div class="display-fl">
+      <label class="label-text">Species:</label>
+      <ng-container *ngIf="species && species.length; then speciesContent else loadingContent"></ng-container>
+      <ng-template #speciesContent>
+        <span *ngFor="let sep of species" class="card-link"
+          (click)="$event.stopPropagation();filterSpecies(sep)">&nbsp;{{sep.name}}</span>
+      </ng-template>
+      <ng-template #loadingContent>
+        &nbsp;<span class="spinner-growspinner-grow-sm" role="status" aria-hidden="true"></span>
+      </ng-template>
+    </div>
+
+    <div class="display-fl">
+      <label class="label-text">Home World:</label>
+      <ng-container *ngIf="planet ; then planetContent else loadingContent"></ng-container>
+      <ng-template #planetContent>
+        <span class="card-link" (click)="$event.stopPropagation();filterHomeworld(planet)">&nbsp;{{planet.name}}</span>
+      </ng-template>
+      <ng-template #loadingContent>
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+      </ng-template>
+    </div>
+  </div>
+</div>

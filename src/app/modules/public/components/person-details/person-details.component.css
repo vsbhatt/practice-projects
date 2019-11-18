@@ -1,0 +1,21 @@
+.content-div {
+  background-color: #282727de !important;
+  color: #ffffff;
+}
+
+.divider {
+  border-top: 1px solid #FFFF00;
+}
+
+.content-title-label {
+  font-size: 24px;
+}
+
+.content-value-label {
+  font-size: 22px;
+  color: #FFFF00;
+}
+
+.spinner-grow {
+  margin-top: 1%;
+}

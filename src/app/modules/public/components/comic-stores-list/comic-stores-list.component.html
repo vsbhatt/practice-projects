@@ -1,0 +1,38 @@
+<div class="loader-div" [hidden]="!isLoading">
+  <div class="d-flex justify-content-center spinner-wrapper">
+    <div class="spinner-grow loader" role="status">
+    </div>
+  </div>
+</div>
+<div class="main-div">
+  <!-- div just to set background image -->
+  <div class="bg">
+  </div>
+  <div class="container" *ngIf="!isLoading">
+    <div class="row" *ngIf="isAllowedCurrentLocation">
+      <div class="col-8" style="display: none;">
+        <div id="map" class="w-100" #map></div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="stores && stores.length">
+        <div class="list-group">
+          <a href="javascript:void(0)"
+            class="list-group-item list-group-item-action list-group-item-light flex-column align-items-start"
+            *ngFor="let store of stores">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{store.name}}</h5>
+            </div>
+            <p class="mb-1">{{store.address}}
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="!isAllowedCurrentLocation">
+      <div class="col-12 text-center">
+        <div class="alert alert-danger">
+          Please allow to access current location to see stores.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

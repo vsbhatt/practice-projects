@@ -1,0 +1,134 @@
+<div class="loader-div" [hidden]="!isLoading">
+  <div class="d-flex justify-content-center spinner-wrapper">
+    <div class="spinner-grow loader" role="status">
+    </div>
+  </div>
+</div>
+
+<div class="main-div">
+  <div class="bg">
+  </div>
+  <div class="container">
+    <!-- people response -->
+    <ng-container *ngIf="peopleResponse && peopleResponse.result && peopleResponse.result.length">
+      <div class="container">
+        <div class="row title-row">
+          <h4>People</h4>
+        </div>
+        <div class="row" *ngIf="peopleResponse && peopleResponse?.result?.length > 0">
+          <div class="col-lg-3 col-md-4 col-sm-1 mb-3" *ngFor="let people of peopleResponse.result">
+            <app-person-card [isReadOnlyCard]="false" [people]="people"></app-person-card>
+          </div>
+        </div>
+        <div class="row justify-content-cn" [hidden]="!showPagination">
+          <app-paginator [total]="peopleResponse.totalRecords" [currentPage]="peoplePaginationRequest.PageNumber"
+            [countsPerPage]="peopleResponse.result.length" (currentPageChange)="getPeople($event)">
+          </app-paginator>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- film response -->
+    <ng-container *ngIf="filmsResponse && filmsResponse.result && filmsResponse.result.length">
+      <div class="container">
+        <div class="row title-row">
+          <h4>Fims</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-1 mb-3 card-layout" *ngFor="let film of filmsResponse.result">
+            <div class="box-part text-center">
+              <div class="name-div">
+                <span class="name-span">{{film.title}}
+                </span>
+              </div>
+              <div class="display-fl mt-5p">
+                <label class="label-text">Description:</label>
+                <ng-container>
+                  <span class="value-text">&nbsp;{{film.description}}</span>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-cn" [hidden]="!showPagination">
+          <app-paginator [total]="filmsResponse.totalRecords" [currentPage]="filmsPaginationRequest.PageNumber"
+            [countsPerPage]="filmsResponse.result.length" (currentPageChange)="searchFilms($event)">
+          </app-paginator>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Planets response -->
+    <ng-container *ngIf="planetsResponse && planetsResponse.result && planetsResponse.result.length">
+      <div class="container ">
+        <div class="row title-row">
+          <h4>Planets</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-1 mb-3 card-layout" *ngFor="let planet of planetsResponse.result">
+            <div class="box-part text-center">
+              <div class="name-div">
+                <span class="name-span">{{planet.name}}
+                </span>
+              </div>
+              <div class="display-fl mt-5p">
+                <label class="label-text">Climate:</label>
+                <ng-container>
+                  <span class="value-text">&nbsp;{{planet.climate}}</span>
+                </ng-container>
+              </div>
+              <div class="display-fl">
+                <label class="label-text">Population:</label>
+                <ng-container>
+                  <span class="value-text">&nbsp;{{planet.populatione}}</span>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-cn" [hidden]="!showPagination">
+          <app-paginator [total]="planetsResponse.totalRecords" [currentPage]="planetsPaginationRequest.PageNumber"
+            [countsPerPage]="planetsResponse.result.length" (currentPageChange)="searchPlanets($event)">
+          </app-paginator>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Spaceship response -->
+    <ng-container *ngIf="spaceShipsResponse && spaceShipsResponse.result && spaceShipsResponse.result.length">
+      <div class="container">
+        <div class="row title-row">
+          <h4>Spaceships</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-1 mb-3 card-layout" *ngFor="let spaceship of spaceShipsResponse.result">
+            <div class="box-part text-center">
+              <div class="name-div">
+                <span class="name-span">{{spaceship.name}}
+                </span>
+              </div>
+              <div class="display-fl mt-5p">
+                <label class="label-text">Model:</label>
+                <ng-container>
+                  <span class="value-text">&nbsp;{{spaceship.model}}</span>
+                </ng-container>
+              </div>
+              <div class="display-fl">
+                <label class="label-text">Manufecturer:</label>
+                <ng-container>
+                  <span class="value-text">&nbsp;{{spaceship.manufacturer}}</span>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-cn" [hidden]="!showPagination">
+          <app-paginator [total]="spaceShipsResponse.totalRecords"
+            [currentPage]="spaceShipsPaginationRequest.PageNumber" [countsPerPage]="spaceShipsResponse.result.length"
+            (currentPageChange)="searchStarships($event)">
+          </app-paginator>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

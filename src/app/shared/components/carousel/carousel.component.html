@@ -1,0 +1,13 @@
+<label class="label-title">{{label}}</label>
+<div class="row carousel-content">
+  <ng-container *ngFor="let film of content; let i = index">
+    <div class="slider" *ngIf="currentImage == i">
+      <h5 class="title">{{film.title}}</h5>
+      <div>{{film.description}}</div>
+    </div>
+  </ng-container>
+  <i class="fa fa-angle-left previous-icon" aria-hidden="true" *ngIf="currentImage > 0"
+    (click)="changeSliderCurrentImage(-1)"></i>
+  <i class="fa fa-angle-right next-icon" aria-hidden="true" *ngIf="currentImage < content.length-1"
+    (click)="changeSliderCurrentImage(1)"></i>
+</div>

@@ -1,0 +1,65 @@
+.box {
+  padding: 60px 0px;
+}
+
+.box-part {
+  background: #FFF;
+  border-radius: 0;
+  padding: 10px 10px;
+  margin: 30px 0px;
+  border: 3px solid black;
+  height: 175px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.text {
+  margin: 20px 0px;
+}
+
+.name-div {
+  background-color: #000;
+  color: #fff;
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-text {
+  font-weight: 600;
+}
+
+.value-text {
+  margin-left: 3%;
+}
+
+.heart-icon {
+  color: #FFFF00;
+  cursor: pointer;
+  margin: 2%;
+}
+
+.name-span {
+  margin-left: 2%;
+}
+
+.main-div {
+  height: 590px;
+}
+
+.title-row {
+  background-color: #ffffff;
+  border: 3px solid #000000;
+  width: 14%;
+  justify-content: center;
+  margin-left: unset;
+}
+
+.card-layout:hover .box-part {
+  box-shadow:
+    1px 1px #000000,
+    2px 2px #000000,
+    3px 3px #000000;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+}

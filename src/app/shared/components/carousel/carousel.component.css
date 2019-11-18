@@ -1,0 +1,32 @@
+.carousel-content {
+  padding: 2%;
+}
+
+.slider {
+  padding: 0 3%;
+  transition-property: opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+.label-title {
+  padding: 1% 0 0 3%;
+  font-size: 30px;
+}
+
+.next-icon {
+  font-size: 40px;
+  color: #ffffff;
+  position: absolute;
+  top: 17%;
+  right: 10%;
+  cursor: pointer;
+}
+
+.previous-icon {
+  font-size: 40px;
+  color: #ffffff;
+  position: absolute;
+  top: 17%;
+  left: 10%;
+  cursor: pointer;
+}

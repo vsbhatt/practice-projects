@@ -1,0 +1,17 @@
+<div class="main-div">
+  <!-- div just to set background image -->
+  <div class="bg">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-1 mb-3" *ngFor="let person of people">
+        <app-person-card [people]="person"></app-person-card>
+      </div>
+      <div *ngIf="!people || (people && !people.length)" class="col-12">
+        <div class="text-center not-available">
+          There are no favourite people to display
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

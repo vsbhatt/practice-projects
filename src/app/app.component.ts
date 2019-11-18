@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  constructor() {
+    // commented for loader for now
+    // this.subscription.add(this._eventsService.subscribe(EventConstants.displayLoading, (isLoading) => {
+    //   this.isLoading = isLoading;
+    // }));
+  }
 }

@@ -1,0 +1,16 @@
+.list-group {
+  border: 3px solid #000000;
+  height: 591px;
+  overflow-y: scroll;
+}
+
+.list-group-item {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #000000;
+  border-radius: unset;
+}
+
+.list-group-item-light.list-group-item-action:hover {
+    color: #000000;
+}

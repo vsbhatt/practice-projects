@@ -1,0 +1,85 @@
+<div class="main-div">
+  <!-- div just to set background image -->
+  <div class="bg">
+  </div>
+  <div class="container">
+    <div class="content-div">
+      <div *ngIf="people && people?.filmNames; then carouselContent else loadingContent">
+      </div>
+      <ng-template #carouselContent>
+        <app-carousel [label]="'Films'" [content]="people?.filmNames"></app-carousel>
+        <hr />
+      </ng-template>
+      <ng-template #loadingContent>
+        &nbsp;<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+        Loading...
+      </ng-template>
+    </div>
+
+    <div class="content-div">
+      <hr class="divider" />
+      <div class="row text-center">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <label class="content-title-label">Species</label>
+          <br />
+          <div class="content-value-label" *ngFor="let species of people?.speciesNames">
+            <label>{{species.name}}</label><br />
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <label class="content-title-label">Home World</label>
+          <br />
+          <label class="content-value-label">{{people?.home}}</label>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <label class="content-title-label">StarShips</label>
+          <br />
+          <div class="content-value-label" *ngFor="let starship of people?.ships">
+            <label>{{people?.name}}</label><br />
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="row text-center">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <label class="content-title-label">Name</label>
+          <br />
+          <label class="content-value-label">{{people?.name}}</label>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <label class="content-title-label">Gender</label>
+          <br />
+          <label class="content-value-label">{{people?.gender}}</label>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <label class="content-title-label">Birth Year</label>
+          <br />
+          <label class="content-value-label">{{people?.birth_year}}</label>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="row text-center">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <label class="content-title-label">Eye color</label>
+          <br />
+          <label class="content-value-label">{{people?.eye_color}}</label>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <label class="content-title-label">Height</label>
+          <br />
+          <label class="content-value-label">{{people?.height}}</label>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <label class="content-title-label">Mass</label>
+          <br />
+          <label class="content-value-label">{{people?.mass}}</label>
+        </div>
+      </div>
+      <hr class="divider" />
+    </div>
+  </div>
+</div>
